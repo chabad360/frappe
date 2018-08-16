@@ -115,9 +115,11 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 				if(!d.label) {	d.label = d.value; }
 
 				var _label = (me.translate_values) ? __(d.label) : d.label;
-				var html = "<strong>" + _label + "</strong>";
 				if(d.description && d.value!==d.description) {
-					html += '<br><span class="small">' + __(d.description) + '</span>';
+				var html = "<strong>" + __(d.description) + "</strong>";
+				html += '<br><span class="small">' + _label + '</span>';
+				} else {
+					var html = "<strong>" + _label + "</strong>";
 				}
 				return $('<li></li>')
 					.data('item.autocomplete', d)
