@@ -116,8 +116,8 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 
 				var _label = (me.translate_values) ? __(d.label) : d.label;
 				if(d.description && d.value!==d.description) {
-				var html = "<strong>" + __(d.description) + "</strong>";
-				html += '<br><span class="small">' + _label + '</span>';
+					var html = "<strong>" + __(d.description) + "</strong>";
+					html += '<br><span class="small">' + _label + '</span>';
 				} else {
 					var html = "<strong>" + _label + "</strong>";
 				}
@@ -232,6 +232,7 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 			if(item.action) {
 				item.value = "";
 				item.action.apply(me);
+				this.set_disp_area(item.description);
 			}
 
 			// if remember_last_selected is checked in the doctype against the field,
