@@ -232,7 +232,7 @@ frappe.ui.form.ControlLink = frappe.ui.form.ControlData.extend({
 			if(item.action) {
 				item.value = "";
 				item.action.apply(me);
-				this.set_disp_area(item.description);
+				this.set_disp_area(item.value.description);
 			}
 
 			// if remember_last_selected is checked in the doctype against the field,
