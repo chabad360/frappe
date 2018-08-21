@@ -53,6 +53,9 @@ frappe.ui.form.ControlData = frappe.ui.form.ControlInput.extend({
 			});
 		}
 	},
+	set_disp_area: function(value) {
+		this.set_disp_area(value);
+	},
 	set_input_attributes: function() {
 		this.$input
 			.attr("data-fieldtype", this.df.fieldtype)
